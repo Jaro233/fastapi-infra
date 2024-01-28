@@ -1,0 +1,13 @@
+.env
+__pycache__
+.pytest*
+chrome*
+dist
+env*
+charts
+Chart.lock
+custom*
+ec2*
+values.yaml
+.terraform*
+terraform.tfstate*
