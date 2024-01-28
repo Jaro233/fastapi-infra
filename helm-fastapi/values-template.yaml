@@ -1,0 +1,32 @@
+postgresql:
+  global:
+    postgresql:
+      auth:
+        username:
+        password:
+        database:
+  primary:
+    persistence:
+      size: 500Mi
+      mountPath: /var/lib/postgresql/data
+    # Configure size, access modes, etc.
+    initdb:
+      scriptsConfigMap: db-init-script
+
+db:
+  host: helm-fastapi-postgresql.default.svc.cluster.local
+  database:
+  user:
+  password:
+  port:
+
+certManager:
+  email:
+  ingressClass: nginx # or the class of your Ingress controller
+
+app:
+  host: fastapi.devops-projects.pl
+  name: fastapi-app
+
+service:
+  port: 8000 # The port your app is running on
